@@ -1,5 +1,8 @@
 # Penpal
-#### Your AI email secretary
+
+![Logo](penpal.PNG)
+
+#### Your AI email assistant
 
 Stop reading hundreds of spam, marketing, and unrelevent emails - have Penpal do that for you! Penpal summarizes your inbox and helps you make sense of what's urgent, and what's not. Your time is valuable - Don't let your sheepish boss waste your time with nicities: get right to the point.
 
