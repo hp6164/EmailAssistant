@@ -36,7 +36,7 @@ const UserProfilePage: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
-    router.push('/login');
+    router.push('/');
   };
 
   return (

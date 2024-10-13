@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiEye, FiEyeOff, FiLock, FiMail } from 'react-icons/fi';
 
@@ -22,12 +22,17 @@ interface PasswordFieldProps {
   setShowPassword: (show: boolean) => void;
 }
 
-const LoginPage: React.FC = () => {
+type Props ={
+  setPage: React.Dispatch<React.SetStateAction<string>>;
+  setUser: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const LoginPage: React.FC<Props> = ({setPage, setUser}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +42,9 @@ const LoginPage: React.FC = () => {
       setError('');
       // Simulate successful login
       localStorage.setItem('isLoggedIn', 'true');
-      router.push('/');
+      setUser(email);
+      setPage("dash");
+      // router.push('/');
     }
   };
 
