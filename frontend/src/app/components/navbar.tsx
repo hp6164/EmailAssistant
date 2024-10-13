@@ -16,7 +16,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
           <Image
-            src="/logo-text.png"
+            src="/logo-no-text.png"
             width={60}
             height={60}
             alt="Logo"
