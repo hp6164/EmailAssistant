@@ -40,6 +40,8 @@ Stop reading hundreds of spam, marketing, and unrelevent emails - have Penpal do
     SAM: $12.60 B    (North America, Europe, and APAC)
     SOM: $378.0 M    (3% market capture potential in the short term)
 
+### Execution
+
 
 ### Future work:
 1. integrate additional email api's.
