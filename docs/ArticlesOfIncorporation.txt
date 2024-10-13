@@ -1,10 +1,10 @@
 ARTICLES OF INCORPORATION
 OF
-Dummy AI Inc.
+Penpal Inc.
 
 ARTICLE I: NAME
 
-The name of the corporation is Dummy AI Inc. (hereinafter referred to as the "Corporation").
+The name of the corporation is Penpal Inc. (hereinafter referred to as the "Corporation").
 
 ARTICLE II: DURATION
 
@@ -85,7 +85,7 @@ The Corporation reserves the right to amend or repeal any provision contained in
 
 ARTICLE XII: INCORPORATOR SIGNATURE
 
-IN WITNESS WHEREOF, the undersigned, being the incorporators of Dummy AI Inc., hereby execute these Articles of Incorporation.
+IN WITNESS WHEREOF, the undersigned, being the incorporators of Penpal Inc., hereby execute these Articles of Incorporation.
 
 John Smith
 Incorporator
