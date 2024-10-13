@@ -8,7 +8,7 @@ import { FiAlertCircle, FiBriefcase, FiCheck, FiChevronRight, FiDollarSign, FiFi
 const Image = dynamic(() => import('next/image'), { ssr: false });
 
 interface EmailItem {
-  isUrgent: boolean;
+  urgent: boolean;
   summary: string;
   timestamp: string | number | Date;
   id: string;
@@ -181,7 +181,7 @@ const EmailStats: React.FC<{ emails: EmailItem[] }> = ({ emails }) => {
   }, []);
 
   const unreadEmails = emails.filter(e => !e.read).length;
-  const priorityEmails = emails.filter(e => e.isUrgent === true).length;
+  const priorityEmails = emails.filter(e => e.urgent === true).length;
   
   const categoryStats = emails.reduce((acc, email) => {
     acc[email.category] = (acc[email.category] || 0) + 1;
@@ -253,11 +253,12 @@ const EmailDashboard: React.FC<Prop> = ({user}) => {
       setError(null);
       try {
         //const response = await fetch('/emails.json');
-        const response = await fetch('http;//localhost:5000/new');
+        const response = await fetch('http://localhost:5000/name');
         // if (!response.ok) {
         //   throw new Error('Failed to fetch emails');
         // }
         const data = await response.json();
+        console.log(data);
         setEmails(data);
       } catch (err) {
         if (err instanceof Error) {

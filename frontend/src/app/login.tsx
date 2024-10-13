@@ -56,7 +56,7 @@ const LoginPage: React.FC<Props> = ({setPage, setUser}) => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md"
       >
-        <h1 className="text-3xl font-bold text-emerald-800 mb-6 text-center">Welcome Back</h1>
+        <h1 className="text-3xl font-bold text-black mb-6 text-center">Welcome Back</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <InputField
             id="email"
@@ -93,7 +93,7 @@ const InputField: React.FC<InputFieldProps> = ({ id, type, label, value, onChang
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 pl-10"
+        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 pl-10"
         placeholder={placeholder}
       />
       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -114,7 +114,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ value, onChange, showPass
         type={showPassword ? 'text' : 'password'}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 pl-10 pr-10"
+        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 pl-10 pr-10"
         placeholder="••••••••"
       />
       <FiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />

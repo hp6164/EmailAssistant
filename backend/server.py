@@ -44,7 +44,7 @@ def Inbox():
         'messages': [
             {
             'role': 'user',
-            'content': f'{email_json_content} \n This is a list of json email objects.\n For each object, write a new object that: \n has the same id. write a very concise 1-2 sentence summary. assign the object to a category based on all the other emails. determine if the email object is urgent.'
+            'content': f'{email_json_content} \n This is a list of json email objects.\n For each object, write a new object that: \n has the same id. write a very concise 1-2 sentence summary. assign the object to a category based on all the other emails, limit to 5 different categories. determine if the email object is urgent.'
         }
         ]
     }
