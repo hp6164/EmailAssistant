@@ -252,10 +252,11 @@ const EmailDashboard: React.FC<Prop> = ({user}) => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch('/emails.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch emails');
-        }
+        //const response = await fetch('/emails.json');
+        const response = await fetch('http;//localhost:5000/new');
+        // if (!response.ok) {
+        //   throw new Error('Failed to fetch emails');
+        // }
         const data = await response.json();
         setEmails(data);
       } catch (err) {
