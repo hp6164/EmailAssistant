@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { FiAlertCircle, FiBriefcase, FiCheck, FiChevronRight, FiDollarSign, FiFileText, FiFilter, FiMail, FiRefreshCw, FiSend, FiTrash2, FiTrendingUp, FiX } from 'react-icons/fi';
 import LoadingSpinner from './components/loadState';
+import Navbar from './components/navbar';
 
 const Image = dynamic(() => import('next/image'), { ssr: false });
 
@@ -25,82 +26,80 @@ const EmailPanel: React.FC<{ emails: EmailItem[], onSelectEmail: (email: EmailIt
 
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
-      <div className="flex justify-between items-center p-4 border-b border-gray-200">
-        <h2 className="text-xl sm:text-2xl font-bold text-emerald-800">Inbox</h2>
-        <div className="flex space-x-2">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full hover:bg-gray-100"
-            onClick={() => alert("Delete feature in progress")}
-          >
-            <FiTrash2 className="text-gray-600" />
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full hover:bg-gray-100"
-            onClick={() => alert("Select all feature in progress")}
-          >
-            <FiCheck className="text-gray-600" />
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full hover:bg-gray-100"
-            onClick={() => alert("Filter feature in progress")}
-          >
-            <FiFilter className="text-gray-600" />
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full hover:bg-gray-100"
-            onClick={() => alert("Refresh feature in progress")}
-          >
-            <FiRefreshCw className="text-gray-600" />
-          </motion.button>
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <h2 className="text-xl sm:text-2xl font-bold text-emerald-800">Inbox</h2>
+          <div className="flex space-x-2">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full hover:bg-gray-100"
+              onClick={() => alert("Delete feature in progress")}
+            >
+              <FiTrash2 className="text-gray-600" />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full hover:bg-gray-100"
+              onClick={() => alert("Select all feature in progress")}
+            >
+              <FiCheck className="text-gray-600" />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full hover:bg-gray-100"
+              onClick={() => alert("Filter feature in progress")}
+            >
+              <FiFilter className="text-gray-600" />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full hover:bg-gray-100"
+              onClick={() => alert("Refresh feature in progress")}
+            >
+              <FiRefreshCw className="text-gray-600" />
+            </motion.button>
+          </div>
+        </div>
+        <div className="overflow-y-auto flex-grow">
+          {emails.map((email) => (
+            <motion.div
+              key={email.id}
+              className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors ${email.read ? 'opacity-70' : 'opacity-100'} ${selectedEmailId === email.id ? 'bg-emerald-50' : ''}`}
+              onMouseEnter={() => setHoveredEmail(email.id)}
+              onMouseLeave={() => setHoveredEmail(null)}
+              onClick={() => onSelectEmail(email)}
+            >
+              <div className="flex justify-between items-center">
+                <div className="flex items-center flex-grow">
+                  {email.urgent === true && <FiAlertCircle className="text-red-500 mr-2 flex-shrink-0" />}
+                  <p className={`font-medium ${email.read ? 'text-gray-600' : 'text-gray-800'} truncate text-sm sm:text-base`}>
+                    {email.summary}
+                  </p>
+                </div>
+                <FiChevronRight className="text-gray-400 flex-shrink-0 ml-2" />
+              </div>
+              <AnimatePresence>
+                {hoveredEmail === email.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="mt-2 text-xs sm:text-sm text-gray-600"
+                  >
+                    <p>From: {email.from}</p>
+                    <p>Sent: {new Date(email.timestamp).toLocaleString()}</p>
+                    <p>Category: {email.category}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </div>
       </div>
-      <div className="overflow-y-auto flex-grow">
-        {emails.map((email) => (
-          <motion.div
-            key={email.id}
-            className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors ${
-              email.read ? 'opacity-70' : 'opacity-100'
-            } ${selectedEmailId === email.id ? 'bg-emerald-50' : ''}`}
-            onMouseEnter={() => setHoveredEmail(email.id)}
-            onMouseLeave={() => setHoveredEmail(null)}
-            onClick={() => onSelectEmail(email)}
-          >
-            <div className="flex justify-between items-center">
-              <div className="flex items-center flex-grow">
-                {email.urgent === true && <FiAlertCircle className="text-red-500 mr-2 flex-shrink-0" />}
-                <p className={`font-medium ${email.read ? 'text-gray-600' : 'text-gray-800'} truncate text-sm sm:text-base`}>
-                  {email.summary}
-                </p>
-              </div>
-              <FiChevronRight className="text-gray-400 flex-shrink-0 ml-2" />
-            </div>
-            <AnimatePresence>
-              {hoveredEmail === email.id && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="mt-2 text-xs sm:text-sm text-gray-600"
-                >
-                  <p>From: {email.from}</p>
-                  <p>Sent: {new Date(email.timestamp).toLocaleString()}</p>
-                  <p>Category: {email.category}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
-      </div>
-    </div>
   );
 };
 
@@ -303,36 +302,36 @@ const handleSelectEmail = async (email: EmailItem) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
+    <>
+      <Navbar />
     <div className="bg-slate-100 min-h-screen p-4">
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Welcome Back!</h1>
-          <p className="text-lg sm:text-xl font-semibold text-emerald-600">{user}</p>
-        </header>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <div className={`lg:col-span-3 h-[600px] ${showEmailContent ? 'hidden lg:block' : ''}`}>
-            <EmailPanel
-              emails={sortedEmails}
-              onSelectEmail={handleSelectEmail}
-              selectedEmailId={selectedEmail?.id || null}
-            />
-          </div>
-          <div className={`lg:col-span-2 h-[600px] ${!showEmailContent ? 'hidden lg:block' : ''}`}>
-            {selectedEmail ? (
-              <EmailContent 
-                email={selectedEmail} 
-                onClose={() => {
-                  setSelectedEmail(null);
-                  setShowEmailContent(false);
-                }} 
-              />
-            ) : (
-              <EmailStats emails={emails} />
-            )}
+        <div className="max-w-7xl mx-auto">
+          <header className="mb-6">
+            <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Welcome Back!</h1>
+            <p className="text-lg sm:text-xl font-semibold text-emerald-600">{user}</p>
+          </header>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div className={`lg:col-span-3 h-[600px] ${showEmailContent ? 'hidden lg:block' : ''}`}>
+              <EmailPanel
+                emails={sortedEmails}
+                onSelectEmail={handleSelectEmail}
+                selectedEmailId={selectedEmail?.id || null} />
+            </div>
+            <div className={`lg:col-span-2 h-[600px] ${!showEmailContent ? 'hidden lg:block' : ''}`}>
+              {selectedEmail ? (
+                <EmailContent
+                  email={selectedEmail}
+                  onClose={() => {
+                    setSelectedEmail(null);
+                    setShowEmailContent(false);
+                  } } />
+              ) : (
+                <EmailStats emails={emails} />
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div></>
   );
 };
 
