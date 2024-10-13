@@ -1,13 +1,13 @@
-# Penpal
+# PenguinPal
 
-![Logo](penpal.PNG)
+![Logo](logo.PNG)
 
 #### Your AI email assistant
 
-Stop reading hundreds of spam, marketing, and unrelevent emails - have Penpal do that for you! Penpal summarizes your inbox and helps you make sense of what's urgent, and what's not. Your time is valuable - Don't let your sheepish boss waste your time with nicities: get right to the point.
+Stop reading hundreds of spam, marketing, and unrelevent emails - have PenguinPal do that for you! PenguinPal summarizes your inbox and helps you make sense of what's urgent, and what's not. Your time is valuable - Don't let your sheepish boss waste your time with nicities: get right to the point.
 
 ## How to use:
-1. Open Penpal's interface.
+1. Open PenguinPal's interface.
 2. Sign-in with your email credentials.
 3. Penpal presents a prioritized list of notes on your unread emails.
 4. Delete spam, note your upcomming project meeting, and respond to urgent emails.
