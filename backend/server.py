@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 url = "https://llm.kindo.ai/v1/chat/completions"
-api_key = "22c4e203-2032-43c9-9b0e-dfc88270b924-2e7e85682c16884d"  
+api_key = ""  
 model = "claude-3-5-sonnet-20240620"  
 
 @app.route('/')
