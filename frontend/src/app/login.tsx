@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion';
-// import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { FiEye, FiEyeOff, FiLock, FiMail } from 'react-icons/fi';
 
@@ -22,7 +22,7 @@ interface PasswordFieldProps {
   setShowPassword: (show: boolean) => void;
 }
 
-type Props ={
+type Props = {
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setUser: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -32,7 +32,6 @@ const LoginPage: React.FC<Props> = ({setPage, setUser}) => {
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-  // const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,11 +39,9 @@ const LoginPage: React.FC<Props> = ({setPage, setUser}) => {
       setError('Please fill in all fields');
     } else {
       setError('');
-      // Simulate successful login
       localStorage.setItem('isLoggedIn', 'true');
       setUser(email);
       setPage("dash");
-      // router.push('/');
     }
   };
 
@@ -56,6 +53,14 @@ const LoginPage: React.FC<Props> = ({setPage, setUser}) => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md"
       >
+        <div className="flex justify-center mb-6">
+          <Image
+            src="/logo-no-text.png"
+            alt="Logo"
+            width={200}
+            height={50}
+          />
+        </div>
         <h1 className="text-3xl font-bold text-black mb-6 text-center">Welcome Back</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <InputField
