@@ -1,0 +1,105 @@
+ARTICLES OF INCORPORATION
+OF
+Dummy AI Inc.
+
+ARTICLE I: NAME
+
+The name of the corporation is Dummy AI Inc. (hereinafter referred to as the "Corporation").
+
+ARTICLE II: DURATION
+
+The Corporation shall have perpetual existence unless dissolved according to law.
+
+ARTICLE III: PURPOSE
+
+The Corporation is organized for the purpose of developing and providing artificial intelligence (AI) technologies, solutions, and services, and to engage in any other lawful act or activity for which corporations may be organized under the laws of [State of Incorporation].
+
+ARTICLE IV: PRINCIPAL OFFICE
+
+The principal office of the Corporation is located at:
+123 Tech Way, Suite 100, Innovation City, State, 12345.
+
+ARTICLE V: REGISTERED AGENT
+
+The name and address of the initial registered agent of the Corporation are as follows:
+John Doe
+123 Legal St, Innovation City, State, 12345.
+
+ARTICLE VI: CAPITAL STOCK
+
+1. Authorized Shares:
+   The total number of shares of stock that the Corporation is authorized to issue is 10,000,000 shares of common stock with a par value of $0.001 per share.
+
+2. Rights of Common Stockholders:
+   The holders of common stock shall be entitled to one vote per share on all matters submitted to a vote of stockholders and shall share equally in any dividends declared by the Corporation, subject to the rights of any preferred stockholders that may be authorized in the future.
+
+ARTICLE VII: INCORPORATORS
+
+The names and addresses of the incorporators of the Corporation are:
+
+1. John Smith
+   234 Code St, Tech City, State, 23456.
+
+2. Jane Doe
+   567 Innovation Blvd, Tech City, State, 23456.
+
+3. Emily Clark
+   890 AI Avenue, Tech City, State, 23456.
+
+4. Michael Johnson
+   345 Robotics Road, Tech City, State, 23456.
+
+5. Sarah Davis
+   678 Neural Lane, Tech City, State, 23456.
+
+ARTICLE VIII: DIRECTORS
+
+The number of directors constituting the initial Board of Directors of the Corporation shall be five (5). The names and addresses of the persons who are to serve as the initial directors until the first annual meeting of stockholders or until their successors are elected and qualified are:
+
+1. John Smith
+   234 Code St, Tech City, State, 23456.
+
+2. Jane Doe
+   567 Innovation Blvd, Tech City, State, 23456.
+
+3. Emily Clark
+   890 AI Avenue, Tech City, State, 23456.
+
+4. Michael Johnson
+   345 Robotics Road, Tech City, State, 23456.
+
+5. Sarah Davis
+   678 Neural Lane, Tech City, State, 23456.
+
+ARTICLE IX: LIMITATION OF LIABILITY
+
+To the fullest extent permitted by the laws of the State of [State of Incorporation], as the same may be amended or supplemented, no director or officer of the Corporation shall be personally liable to the Corporation or its stockholders for monetary damages for breach of fiduciary duty as a director or officer.
+
+ARTICLE X: INDEMNIFICATION
+
+The Corporation shall indemnify its directors and officers to the fullest extent permitted by the laws of the State of [State of Incorporation].
+
+ARTICLE XI: AMENDMENTS
+
+The Corporation reserves the right to amend or repeal any provision contained in these Articles of Incorporation in the manner prescribed by law.
+
+ARTICLE XII: INCORPORATOR SIGNATURE
+
+IN WITNESS WHEREOF, the undersigned, being the incorporators of Dummy AI Inc., hereby execute these Articles of Incorporation.
+
+John Smith
+Incorporator
+
+Jane Doe
+Incorporator
+
+Emily Clark
+Incorporator
+
+Michael Johnson
+Incorporator
+
+Sarah Davis
+Incorporator
+
+Dated this 13th day of October, 2024.
