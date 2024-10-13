@@ -1,2 +1,8 @@
-frontend/node_modules/
+
+.venv
+frontend/node_modules
+frontend/.next/
 frontend/package-lock.json
+vendor
+node_modules
+vendor
