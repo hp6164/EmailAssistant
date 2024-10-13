@@ -1,39 +1,54 @@
-# Summer (Your AI email secratary)
+# Penpal
+#### Your AI email secretary
 
-Convert your 100 unread emails to an easily digestible organized list of 10 notes. The AI email assistant is a powerful tool that can help you manage your inbox more efficiently. It can summarize your emails, identify important messages, and reduce the time you spend sifting.
+Stop reading hundreds of spam, marketing, and unrelevent emails - have Penpal do that for you! Penpal summarizes your inbox and helps you make sense of what's urgent, and what's not. Your time is valuable - Don't let your sheepish boss waste your time with nicities: get right to the point.
+
+## How to use:
+1. Open Penpal's interface.
+2. Sign-in with your email credentials.
+3. Penpal presents a prioritized list of notes on your unread emails.
+4. Delete spam, note your upcomming project meeting, and respond to urgent emails.
+5. Get back to something important.
+
+## Features:
+- See urgent emails expecting a reply marked at the top of your inbox.
+- Get the gist of your unread emails listed as easy to digest summaries.
+- Organize your inbox into smart categories to sift out marketing and spam and see only whats important to you.
+- Handle batches of emails with a single click.
+- Select important emails to see the full content and respond.
+
+<br><hr><hr>
+
 
 ### Market Fit
-    In 2023, there were around 3.5 billion email users globally, and about 300 billion emails are sent daily.
-    On average Business Professionals spend 3 hours checking emails, once every 37 min & spend another 2.5 hours outside of business hours checking their personal emails.
-    By summarizing the user's inbox, we could save users an average of 4.5 hours a day, and giver employers an average of 3 more productive hours per employee per day - reducing costs of operation by at least $39 per employee per day.
-
-    Business 68% of market
-    Personal 32% of market
+    - In 2023, there were around 3.5 billion email users globally, with 300 billion emails sent daily.
+    - On average, Business Professionals spend 3 hours checking emails, once every 37 min, & another 2.5 hours checking personal emails outside of work.
+    - By summarizing the user's inbox, we could save users an average of 4.5 hours a day checking emails, and give employers an average of 3 more productive hours per employee per day - reducing costs of operation by at least $39 per employee per day (considering minimum wage).
 
 ### Scalability
-    After aquiriging 100,000 users, the AI Email Assistant can be scaled up to enterprise application where a large volume of emails from multiple users can be summarized for employer oversight.
+    After aquiriging significant personal usage users, the AI Email Assistant can be scaled up to enterprise application where a large volume of emails from multiple users can be summarized for employer oversight.
 
 ### Revenue Potential
     AI email assistant: 
+        Business 68% of market
+        Personal 32% of market
+
     TAM: $21.00 B    (global market for AI email assistants)
     SAM: $12.60 B    (North America, Europe, and APAC)
     SOM: $378.0 M    (3% market capture potential in the short term)
 
 
+### Future work:
+1. integrate additional email api's.
+2. learn from user responses to generate customized responses.
+3. train custom algorythm/model.
+4. Integrate email sending
+5. Provide analysis how 'employees' use their emails
+4. Build proprietary email server for enterprise applications.
 
 
 
-### Current Limitation and future work:
-1. leave the browser and convert to a native app
-2. integrate additional email api's
-3. learn from user responses to generate customized responses
-4. train custom algorythm/model
-5. 
-
-
-<br><br>
---------
-
+<br><hr>
 # Notes 
 
 #### Judging Criteria: (AI Email Assistant)
