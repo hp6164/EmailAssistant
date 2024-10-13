@@ -1,0 +1,13 @@
+Penpal Terms of Use
+
+Acceptance of Terms
+By using Penpal, you agree to the terms outlined in this document.
+
+User License
+Penpal grants users a limited, non-exclusive license to use the AI email management services.
+
+Privacy
+Penpal only accesses emails for the purpose of summarization and categorization. User data will never be sold or shared with third parties.
+
+Liability Disclaimer
+Penpal is not responsible for any missed or miscategorized emails.
