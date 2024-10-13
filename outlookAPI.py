@@ -3,7 +3,9 @@ import requests
 # tenant = '87b04d11-3e69-407f-949c-96ff7de6f036'
 tenant = 'common'
 client_id = '56cf533e-417a-456a-9d46-a4e893bd642d'
-redirect_uri = 'http://localhost:8000'
+# redirect_uri = 'http://localhost:8000'
+# redirect_uri = 'https://login.microsoftonline.com/common'
+redirect_uri = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
 
 url = 'https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize'
 params = {
