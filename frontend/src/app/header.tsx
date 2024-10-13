@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { FiAlertCircle, FiBriefcase, FiCheck, FiChevronRight, FiDollarSign, FiFileText, FiFilter, FiMail, FiRefreshCw, FiSend, FiTrash2, FiTrendingUp, FiX } from 'react-icons/fi';
+import LoadingSpinner from './components/loadState';
 
 const Image = dynamic(() => import('next/image'), { ssr: false });
 
@@ -74,7 +75,7 @@ const EmailPanel: React.FC<{ emails: EmailItem[], onSelectEmail: (email: EmailIt
           >
             <div className="flex justify-between items-center">
               <div className="flex items-center flex-grow">
-                {email.isUrgent === true && <FiAlertCircle className="text-red-500 mr-2 flex-shrink-0" />}
+                {email.urgent === true && <FiAlertCircle className="text-red-500 mr-2 flex-shrink-0" />}
                 <p className={`font-medium ${email.read ? 'text-gray-600' : 'text-gray-800'} truncate text-sm sm:text-base`}>
                   {email.summary}
                 </p>
@@ -214,7 +215,7 @@ const EmailStats: React.FC<{ emails: EmailItem[] }> = ({ emails }) => {
         ].map(({ label, icon: Icon, color, value }) => (
           <div key={label} className="flex flex-col items-center bg-gray-50 p-3 sm:p-4 rounded-lg">
             <Icon className={`mb-1 sm:mb-2 ${color}`} size={20} />
-            <span className="text-sm sm:text-base font-medium text-gray-700">{label}</span>
+            <span className="text-sm text-center sm:text-base font-medium text-gray-700">{label}</span>
             <span className={`text-lg sm:text-2xl font-bold ${color}`}>{value}</span>
           </div>
         ))}
@@ -278,8 +279,8 @@ const EmailDashboard: React.FC<Prop> = ({user}) => {
 
 const sortedEmails = [...emails].sort((a, b) => {
   // Sort by urgency first
-  if (a.isUrgent !== b.isUrgent) {
-    return a.isUrgent ? -1 : 1;
+  if (a.urgent !== b.urgent) {
+    return a.urgent ? -1 : 1;
   }
   
   // If urgency is the same, sort by timestamp (most recent first)
@@ -289,13 +290,16 @@ const sortedEmails = [...emails].sort((a, b) => {
 });
 
 
+const handleSelectEmail = async (email: EmailItem) => {
+  setLoading(true);
+  // Simulate loading delay
+  await new Promise(resolve => setTimeout(resolve, 500));
+  setSelectedEmail(email);
+  setShowEmailContent(true);
+  setLoading(false);
+};
 
-  const handleSelectEmail = (email: EmailItem) => {
-    setSelectedEmail(email);
-    setShowEmailContent(true);
-  };
-
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <div>Error: {error}</div>;
 
   return (
