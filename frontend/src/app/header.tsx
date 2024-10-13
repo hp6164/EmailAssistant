@@ -51,9 +51,9 @@ const EmailPanel: React.FC<{ emails: EmailItem[], onSelectEmail: (email: EmailIt
   const [hoveredEmail, setHoveredEmail] = useState<string | null>(null);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-[800px]">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
       <div className="flex justify-between items-center p-4 border-b border-gray-200">
-        <h2 className="text-2xl font-bold text-emerald-800">Inbox</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-emerald-800">Inbox</h2>
         <div className="flex space-x-2">
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -103,7 +103,7 @@ const EmailPanel: React.FC<{ emails: EmailItem[], onSelectEmail: (email: EmailIt
             <div className="flex justify-between items-center">
               <div className="flex items-center flex-grow">
                 {email.priority === 'high' && <FiAlertCircle className="text-red-500 mr-2 flex-shrink-0" />}
-                <p className={`font-medium ${email.read ? 'text-gray-600' : 'text-gray-800'} truncate text-base`}>
+                <p className={`font-medium ${email.read ? 'text-gray-600' : 'text-gray-800'} truncate text-sm sm:text-base`}>
                   {email.aiSummary}
                 </p>
               </div>
@@ -116,7 +116,7 @@ const EmailPanel: React.FC<{ emails: EmailItem[], onSelectEmail: (email: EmailIt
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="mt-2 text-sm text-gray-600"
+                  className="mt-2 text-xs sm:text-sm text-gray-600"
                 >
                   <p>From: {email.sender}</p>
                   <p>Sent: {new Date(email.date).toLocaleString()}</p>
@@ -135,23 +135,23 @@ const EmailContent: React.FC<{ email: EmailItem, onClose: () => void }> = ({ ema
   const [showReplyBox, setShowReplyBox] = useState(false);
 
   return (
-    <div className="bg-white rounded-xl p-6 h-[800px] overflow-hidden flex flex-col">
+    <div className="bg-white rounded-xl p-4 sm:p-6 h-full overflow-hidden flex flex-col">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold text-gray-800">{email.subject}</h2>
-        <button onClick={onClose}>
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 truncate">{email.subject}</h2>
+        <button onClick={onClose} className="sm:hidden">
           <FiX className="text-gray-600 hover:text-gray-800" size={24} />
         </button>
       </div>
-      <p className="text-base text-gray-600 mb-2">From: {email.sender}</p>
-      <p className="text-base text-gray-600 mb-4">
+      <p className="text-sm sm:text-base text-gray-600 mb-2">From: {email.sender}</p>
+      <p className="text-sm sm:text-base text-gray-600 mb-4">
         {new Date(email.date).toLocaleString()}
       </p>
-      <div className="bg-emerald-50 p-4 rounded-lg mb-4">
-        <p className="text-emerald-800 font-medium text-lg mb-2">AI Summary:</p>
-        <p className="text-emerald-700 text-base">{email.aiSummary}</p>
+      <div className="bg-emerald-50 p-3 sm:p-4 rounded-lg mb-4">
+        <p className="text-emerald-800 font-medium text-base sm:text-lg mb-2">AI Summary:</p>
+        <p className="text-emerald-700 text-sm sm:text-base">{email.aiSummary}</p>
       </div>
       <div className="flex-grow overflow-y-auto mb-4">
-        <p className="text-gray-800 whitespace-pre-wrap text-base leading-relaxed">{email.content}</p>
+        <p className="text-gray-800 whitespace-pre-wrap text-sm sm:text-base leading-relaxed">{email.content}</p>
       </div>
       <motion.button
         whileHover={{ scale: 1.05 }}
@@ -168,23 +168,23 @@ const EmailContent: React.FC<{ email: EmailItem, onClose: () => void }> = ({ ema
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-4 bg-gray-50 p-4 rounded-lg"
+            className="mt-4 bg-gray-50 p-3 sm:p-4 rounded-lg"
           >
             <input
               type="text"
               placeholder="To: (auto-filled)"
-              className="w-full p-2 mb-2 border rounded"
+              className="w-full p-2 mb-2 border rounded text-sm sm:text-base"
               value={email.sender}
               readOnly
             />
             <input
               type="text"
               placeholder="Subject"
-              className="w-full p-2 mb-2 border rounded"
+              className="w-full p-2 mb-2 border rounded text-sm sm:text-base"
             />
             <textarea
               placeholder="Your message"
-              className="w-full p-2 mb-2 border rounded h-24"
+              className="w-full p-2 mb-2 border rounded h-24 text-sm sm:text-base"
             ></textarea>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -228,9 +228,9 @@ const EmailStats: React.FC<{ emails: EmailItem[] }> = ({ emails }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 h-[800px] overflow-y-auto flex flex-col">
-      <h2 className="text-2xl font-bold text-emerald-800 mb-6">Email Stats</h2>
-      <div className="grid grid-cols-2 gap-6 mb-6">
+    <div className="bg-white rounded-xl p-4 sm:p-6 h-full overflow-y-auto flex flex-col">
+      <h2 className="text-xl sm:text-2xl font-bold text-emerald-800 mb-4 sm:mb-6">Email Stats</h2>
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
         {[
           { label: 'Unread', icon: FiMail, color: 'text-blue-500', value: unreadEmails },
           { label: 'Priority', icon: FiAlertCircle, color: 'text-red-500', value: priorityEmails },
@@ -241,10 +241,10 @@ const EmailStats: React.FC<{ emails: EmailItem[] }> = ({ emails }) => {
             value: count
           }))
         ].map(({ label, icon: Icon, color, value }) => (
-          <div key={label} className="flex flex-col items-center bg-gray-50 p-4 rounded-lg">
-            <Icon className={`mb-2 ${color}`} size={24} />
-            <span className="text-base font-medium text-gray-700">{label}</span>
-            <span className={`text-2xl font-bold ${color}`}>{value}</span>
+          <div key={label} className="flex flex-col items-center bg-gray-50 p-3 sm:p-4 rounded-lg">
+            <Icon className={`mb-1 sm:mb-2 ${color}`} size={20} />
+            <span className="text-sm sm:text-base font-medium text-gray-700">{label}</span>
+            <span className={`text-lg sm:text-2xl font-bold ${color}`}>{value}</span>
           </div>
         ))}
       </div>
@@ -252,8 +252,8 @@ const EmailStats: React.FC<{ emails: EmailItem[] }> = ({ emails }) => {
         {isMounted && (
           <Image 
             src="/logo-no-text.png"
-            width={300}
-            height={200}
+            width={200}
+            height={133}
             alt="Logo"
             style={{
               filter: 'grayscale(100%)',
@@ -271,6 +271,7 @@ const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<EmailItem | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showEmailContent, setShowEmailContent] = useState(false);
 
   useEffect(() => {
     const fetchEmails = async () => {
@@ -300,28 +301,39 @@ const EmailDashboard: React.FC = () => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+  const handleSelectEmail = (email: EmailItem) => {
+    setSelectedEmail(email);
+    setShowEmailContent(true);
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-slate-100 min-h-screen p-4 sm:p-6">
-      <div className="max-w-full mx-auto">
+    <div className="bg-slate-100 min-h-screen p-4">
+      <div className="max-w-7xl mx-auto">
         <header className="mb-6">
-          <h1 className="text-3xl font-bold text-emerald-800">Welcome Back!</h1>
-          <p className="text-xl font-semibold text-emerald-600">user8687391766990</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Welcome Back!</h1>
+          <p className="text-lg sm:text-xl font-semibold text-emerald-600">user8687391766990</p>
         </header>
 
-        <div className="grid grid-cols-5 gap-6">
-          <div className="col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          <div className={`lg:col-span-3 h-[600px] ${showEmailContent ? 'hidden lg:block' : ''}`}>
             <EmailPanel
               emails={sortedEmails}
-              onSelectEmail={setSelectedEmail}
+              onSelectEmail={handleSelectEmail}
               selectedEmailId={selectedEmail?.id || null}
             />
           </div>
-          <div className="col-span-2">
+          <div className={`lg:col-span-2 h-[600px] ${!showEmailContent ? 'hidden lg:block' : ''}`}>
             {selectedEmail ? (
-              <EmailContent email={selectedEmail} onClose={() => setSelectedEmail(null)} />
+              <EmailContent 
+                email={selectedEmail} 
+                onClose={() => {
+                  setSelectedEmail(null);
+                  setShowEmailContent(false);
+                }} 
+              />
             ) : (
               <EmailStats emails={emails} />
             )}
